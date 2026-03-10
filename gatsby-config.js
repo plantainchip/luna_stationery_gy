@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Luna Stationery GY`,
     description: `Cute stationery shop — handcrafted stickers, prints, washi tape & charms made with love.`,
-    siteUrl: `https://plantainchip.github.io/luna_stationery_gy`,
+    siteUrl: `https://maitri.me/luna_stationery_gy`,
   },
   plugins: [
     `gatsby-plugin-image`,
