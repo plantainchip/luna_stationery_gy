@@ -3,10 +3,11 @@ backend:
   repo: plantainchip/luna_stationery_gy
   branch: main
   auth_type: pkce
-  # app_id: Ov23liUApLD80UIBQWA1
+  app_id: Ov23liUApLD80UIBQWA1
 
 
-# site_url: https://maitri.me/luna_stationery_gy
+site_url: https://maitri.me/luna_stationery_gy
+base_url: https://maitri.me/luna_stationery_gy
 
 publish_mode: editorial_workflow
 media_folder: static/img
