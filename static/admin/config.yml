@@ -1,0 +1,131 @@
+backend:
+  name: github
+  repo: plantainchip/luna_stationery_gy
+  branch: main
+  auth_type: pkce
+  app_id: Ov23liUApLD80UIBQWA1
+
+publish_mode: editorial_workflow
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: settings
+    label: "Site Settings"
+    files:
+      - name: general
+        label: "General Settings"
+        file: "content/settings/general.md"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: hidden, default: settings }
+          - { label: "Brand Name", name: brand_name, widget: string, default: "Luna Stationery GY" }
+          - { label: "Formspree Form ID", name: formspree_id, widget: string, required: false, hint: "Your Formspree form ID for order submissions (e.g. xyzabcde). Get one free at formspree.io" }
+          - label: "Announcement Bar Messages"
+            name: announcement_messages
+            widget: list
+            field: { label: Message, name: message, widget: string }
+          - label: "Navigation Links"
+            name: nav_links
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: "Footer Links"
+            name: footer_links
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL, name: url, widget: string }
+          - label: "Product Categories"
+            name: categories
+            widget: list
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Emoji, name: emoji, widget: string }
+              - { label: Slug, name: slug, widget: string }
+          - { label: "Copyright Text", name: copyright_text, widget: string }
+          - label: "Style Settings"
+            name: style_settings
+            widget: object
+            fields:
+              - { label: "Primary Color", name: primary_color, widget: color, default: "#8B5CF6" }
+              - { label: "Secondary Color (Pink)", name: secondary_color, widget: color, default: "#EC4899" }
+              - { label: "Accent Color", name: accent_color, widget: color, default: "#F472B6" }
+              - { label: "Announcement Bar Background", name: announcement_bg_color, widget: color, default: "#5B2D8E" }
+              - { label: "Footer Background", name: footer_bg_color, widget: color, default: "#3D1F56" }
+
+  - name: home
+    label: "Home Page"
+    files:
+      - name: hero
+        label: "Hero Section"
+        file: "content/home/hero.md"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: hidden, default: hero }
+          - { label: "Badge Text", name: badge_text, widget: string }
+          - { label: "Heading", name: heading, widget: string, hint: "Main heading text (non-highlighted part)" }
+          - { label: "Heading Highlight", name: heading_highlight, widget: string, hint: "Italic/highlighted text in the heading" }
+          - { label: "Heading Emoji", name: heading_emoji, widget: string, hint: "Emoji at end of heading" }
+          - { label: "Description", name: description, widget: text }
+          - { label: "Primary Button Text", name: primary_button_text, widget: string }
+          - { label: "Primary Button Link", name: primary_button_link, widget: string }
+          - { label: "Secondary Button Text", name: secondary_button_text, widget: string }
+          - { label: "Secondary Button Link", name: secondary_button_link, widget: string }
+          - { label: "Background Image", name: background_image, widget: image, required: false }
+
+      - name: promo
+        label: "Promo Banner"
+        file: "content/home/promo.md"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: hidden, default: promo }
+          - { label: "Heading", name: heading, widget: string }
+          - { label: "Subtext", name: subtext, widget: string }
+          - { label: "Coupon Code", name: coupon_code, widget: string }
+          - { label: "Button Text", name: button_text, widget: string }
+          - { label: "Button Link", name: button_link, widget: string }
+          - label: "Style"
+            name: style
+            widget: object
+            fields:
+              - { label: "Background Start Color", name: promo_bg_start, widget: color, default: "#F9A8D4" }
+              - { label: "Background End Color", name: promo_bg_end, widget: color, default: "#FBCFE8" }
+
+      - name: newsletter
+        label: "Newsletter Section"
+        file: "content/home/newsletter.md"
+        fields:
+          - { label: "Template Key", name: templateKey, widget: hidden, default: newsletter }
+          - { label: "Heading", name: heading, widget: string }
+          - { label: "Heading Emoji", name: heading_emoji, widget: string, required: false }
+          - { label: "Description", name: description, widget: text }
+          - { label: "Button Text", name: button_text, widget: string }
+
+  - name: products
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Template Key", name: templateKey, widget: hidden, default: product }
+      - { label: "Title", name: title, widget: string }
+      - label: "Category"
+        name: category
+        widget: select
+        options:
+          - { label: "Stickers", value: "stickers" }
+          - { label: "Sticker Sheets", value: "sticker-sheets" }
+          - { label: "Prints", value: "prints" }
+          - { label: "Washi Tape", value: "washi-tape" }
+          - { label: "Keychains", value: "keychains" }
+          - { label: "Mystery Bag", value: "mystery-bag" }
+          - { label: "Bundles", value: "bundles" }
+          - { label: "Coasters", value: "coasters" }
+          - { label: "Charms", value: "charms" }
+      - { label: "Price", name: price, widget: number, value_type: float }
+      - { label: "Price Prefix", name: price_prefix, widget: string, required: false, hint: "e.g. 'From' for variable-price items" }
+      - { label: "Emoji", name: emoji, widget: string, hint: "Emoji displayed on the product card" }
+      - { label: "Product Image", name: image, widget: image, required: false, hint: "Upload a product photo (overrides emoji display)" }
+      - { label: "Card Background Color", name: card_color, widget: color, default: "#EDE9FE" }
+      - { label: "Short Description", name: description, widget: string, required: false }
+      - { label: "New Product", name: is_new, widget: boolean, default: false }
+      - { label: "Featured on Homepage", name: is_featured, widget: boolean, default: false }

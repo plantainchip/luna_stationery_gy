@@ -1,0 +1,23 @@
+{
+  "name": "luna-stationery-gy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Blush & Bloom — Cute stationery shop built with Gatsby and Decap CMS",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build --prefix-paths",
+    "serve": "gatsby serve --prefix-paths",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^5.13.0",
+    "gatsby-plugin-image": "^3.13.0",
+    "gatsby-plugin-sharp": "^5.13.0",
+    "gatsby-source-filesystem": "^5.13.0",
+    "gatsby-transformer-remark": "^6.13.0",
+    "gatsby-transformer-sharp": "^5.13.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
