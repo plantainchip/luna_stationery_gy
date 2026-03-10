@@ -5,9 +5,7 @@ backend:
   auth_type: pkce
   app_id: Ov23liUApLD80UIBQWA1
 
-
-site_url: https://maitri.me/luna_stationery_gy
-base_url: https://maitri.me/luna_stationery_gy
+local_backend: true
 
 publish_mode: editorial_workflow
 media_folder: static/img

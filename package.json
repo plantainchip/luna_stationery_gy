@@ -5,6 +5,7 @@
   "description": "Blush & Bloom — Cute stationery shop built with Gatsby and Decap CMS",
   "scripts": {
     "develop": "gatsby develop",
+    "cms": "npx decap-server",
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths",
@@ -19,5 +20,8 @@
     "gatsby-transformer-sharp": "^5.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "decap-server": "^3.5.2"
   }
 }

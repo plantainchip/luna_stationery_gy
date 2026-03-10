@@ -28,8 +28,8 @@ Decap CMS uses GitHub as its authentication backend. To enable login:
 2. Click **New OAuth App**.
 3. Fill in:
    - **Application name**: `Blush & Bloom CMS` (or any name)
-   - **Homepage URL**: `https://plantainchip.github.io/luna_stationery_gy/`
-   - **Authorization callback URL**: `https://plantainchip.github.io/luna_stationery_gy/admin/`
+   - **Homepage URL**: `https://maitri.me/luna_stationery_gy/`
+   - **Authorization callback URL**: `https://maitri.me/luna_stationery_gy/admin/`
 4. Click **Register application** and copy the **Client ID**.
 5. Open `static/admin/config.yml` and add your Client ID:
 
